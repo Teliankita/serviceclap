@@ -7,12 +7,12 @@ if(isset($_POST['drop1']))
 $drop1=$_POST['drop1'];
 if(isset($_POST['login'])){
     if($drop1=="Banglore"){
-        header("location:company.php");
+        header("location:company2.php");
     }
     elseif($drop1=="Mysuru")
     {
 
-            header("location:company1.php");
+            header("location:company2.php");
         }
     else{
         header("location:company2.php");
@@ -59,7 +59,7 @@ if(isset($_POST['login'])){
         <div class="boxed">
 <br>
 <br>
-            <form action="ababylocation.php" method="POST" enctype="multipart/form-data">
+            <form action="1babylocation.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
                 <div class="col-sm-2"></div>
                     <div class="col-sm-5">

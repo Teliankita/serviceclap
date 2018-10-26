@@ -70,7 +70,7 @@ if($res){
 
     <div class="container">
         <div class="boxed">
-            <form action="localguide.php" method="POST" enctype="multipart/form-data">
+            <form action="localguide.php" method="POST" enctype="multipart/form-data" onsubmit="return myfun()">
                 <div class="row">
                     <div class="col-sm-7">
                         <div class="form-group">

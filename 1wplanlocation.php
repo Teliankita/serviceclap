@@ -7,15 +7,15 @@ if(isset($_POST['drop1']))
 $drop1=$_POST['drop1'];
 if(isset($_POST['login'])){
     if($drop1=="Banglore"){
-        header("location:awcompany1.php");
+        header("location:company1.php");
     }
     elseif($drop1=="Mysuru")
     {
 
-            header("location:awcompany1.php");
+            header("location:company1.php");
         }
     else{
-        header("location:awcompany2.php");
+        header("location:company2.php");
     }
 }
 ?>

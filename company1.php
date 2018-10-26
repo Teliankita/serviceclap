@@ -1,7 +1,18 @@
 
 <?php
-include("include.php");
+$user="root";
+$pass="";
+$host="localhost";
+$dbname="urbanclap";
+
+$con=mysqli_connect($host,$user,$pass,$dbname);
+if(!$con)
+{
+    die("connection failed: " . mysqli_connect_error());
+}
 ?>
+<!-- // include("include.php");
+// ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,99 +33,146 @@ include("include.php");
 
 <body>
   
-      
-
-        <!-- end -->
      <br>
      <br>
 <!-- banner -->
 <div class="boxed">
+     <!-- Fixed navbar -->
+     <nav class="navbar navbar-default navbar-fixed-top" style="background: #000000;color:#fff;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php" >Urban Clap</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.php">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.php">Contact</a>
+                    </li>
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                    <li>
+                        <a href="signup.php">Signup</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="swedding.php">Wedding</a>
+                            </li>
+                           
+                            <li>
+                                <a href="scityguid.php">City Guide</a>
+                            </li>
+                            <li>
+                                <a href="smedical.php">Medical</a>
+                            </li>
+                            <li>
+                                <a href="shometution.php">Home Tutors</a>
+                            </li>
+                            <li>
+                                <a href="shomeshift.php">Home Shift</a>
+                            </li>
+                            
+                            <li>
+                                <a href="sbaby.php">One Day Baby Care</a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://getbootstrap.com/examples/theme/#"></a>fgvhb</li>
+                            <li>
+                                <a href="https://getbootstrap.com/examples/theme/#">One more separated link</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <!-- navend -->
+
 <header class="header">
     <br>
-    <h1 class="header__title">Best Wedding Planner in Mysore</h1>
+    <h1 class="header__title">Best Wedding Planner in Banglore</h1><br>
     
     <!-- <a href="http://praliedutzel.com/a-guide-to-hero-images/" target="_blank"style="width:200px;"  class="btn btn-default" ><h4>Create</h4></a> -->
 </ul>
   </header>
-<!-- end banner -->
-        <!-- end banner -->
-     
         <!-- services image -->
         <div class=" row">
-       
-            <div class=" col-sm-4" >
-                <div class="col-xs-12 img-outer" style="margin: 20px 0;">
-                    <div class="hovereffect">
+            <br>
+            <!-- <div class=" col-sm-4" > -->
+                <!-- <div class="col-xs-12 img-outer" style="margin: 20px 0;">
+                    <div class="hovereffect"> -->
                     <?php 
-                $sql="SELECT * FROM acompany WHERE id=9";
+                $sql="SELECT * FROM image";
                 $res=mysqli_query($con,$sql);
                 while($row=mysqli_fetch_assoc($res)){
-                    ?>
-                        <div class="z-text">
-                            <a href="mwplanxyz.php" target='_blank' >     
-                <?php  echo '<h2>'.$row['cname'].'</h2>'; ?>
-                            
-                        </a>
+                ?>
+                          <div class="col-md-4" class="z-img">
+                        <img src="<?php echo 'Pictures/'. $row['file1']; ?>" alt="<?php echo 'Pictures/'. $row['file2'] ?>" height="200" width="200" /> 
+                    <a href="mwplanA.php?nameid=<?php echo $row['id']; ?>">    <?php  echo '<h2>'.$row['name'].'</h2>'; ?></a>
                         </div>
-                        <div class="z-img">
-                      <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="img-responsive">'; ?>
-                        </div>
+                     
+                        <br>  
                 <?php } ?>
-                    </div>
-                </div>
-            </div>
-         
-            <div class=" col-sm-4">
-                <div class="col-xs-12 img-outer" style="margin: 20px 0;">
-                    <div class="hovereffect">
-                    <?php 
-                $sql="SELECT * FROM acompany WHERE id=10";
-                $res=mysqli_query($con,$sql);
-                while($row=mysqli_fetch_assoc($res)){
-                    ?>
-                        <div class="z-text">
-                            <a href="mwplanA.php" target='_blank' >     <?php  echo '<h2>'.$row['cname'].'</h2>'; ?>
-                          </a>
-                        </div>
-                        <div class="z-img">
-                        <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="img-responsive">'; ?>
-                        </div>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-          
-            <div class=" col-sm-4">
-                <div class="col-xs-12 img-outer" style="margin: 20px 0;">
-                    <div class="hovereffect">
-                    <?php 
-                $sql="SELECT * FROM acompany WHERE id=11";
-                $res=mysqli_query($con,$sql);
-                while($row=mysqli_fetch_assoc($res)){
-                    ?>
-                        <div class="z-text">
-                            <a href="mwplanB.php" target='_blank' >
-                                  <?php  echo '<h2>'.$row['cname'].'</h2>'; ?>
-                           </a>
-                        </div>
-                        <div class="z-img">
-                        <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'" class="img-responsive">'; ?>
-                        </div>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    
+               
+                    <!-- </div>
+                </div> -->
+            <!-- </div> -->
+
       
-          
+      
            
         <!-- like -->
 
 <hr>
     
     </div>
-   
+    <footer class="container " style="padding:32px;font-size:20px;background-color:black;color:#fff; width:100%;">
+        <aside id="footer-widgets" style="background: #000000;color:#fff;">
+           <div class="row">
+                <center>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook-square"> </i>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"> </i>
+                    </a>
+
+                    <a href="https://twitter.com" target="_blank">
+                        <i class="fab fa-twitter-square"> </i>
+                    </a>
+
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <i class="fab fa-linkedin-in"> </i>
+                    </a>
+
+                    <a href="https://www.gmail.com" target="_blank">
+                        <i class="fas fa-envelope-square"></i>
+                    </a>
+                </center>
+            </div>
+       </aside>
+           
+     </footer>
     <script>
         
         // img

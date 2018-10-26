@@ -11,9 +11,13 @@ if(isset($_POST['uname']))
  if(isset($_POST['login'])){
      if($uname=="admin" && $pawd=="admin"){
          
-       header("location:wengagedboard.php");
+       header("location:adminprofile.php");
     }
-             //end admon can only login the page
+              //end admon can only login the page
+              elseif($uname=="vendor" && $pawd="vendor")
+              {
+                header("location:windex.php");
+              }
              //retrive name and password from the database
             else{
     $uname=$_POST['uname'];
@@ -26,6 +30,7 @@ $query=mysqli_query($con,"SELECT * FROM regis WHERE name='$uname' and pwd='$pawd
 else{
    header("location:login.php");
  }
+
 }
  }
 ?>

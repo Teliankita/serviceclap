@@ -1,9 +1,12 @@
 <?php
 include("include.php");
+$nameid=$_GET['nameid'];
 ?>
 <?php
+SESSION_START();
 if(isset($_POST["insert"]))
 {
+$drop5=$_POST['drop5'];
     $drop1=$_POST['drop1'];
     $drop2=$_POST['drop2'];
     $drop3=$_POST['drop3'];
@@ -13,12 +16,32 @@ if(isset($_POST["insert"]))
 //store a image in database3
 
 
-$sql="INSERT INTO bridalmakeup (drop1,drop2,drop3,date,phone) VALUES ('$drop1','$drop2','$drop3','$date',$phone)";
+$sql="INSERT INTO bridalmakeup (name,drop1,drop2,drop3,date,phone) VALUES ('$drop5','$drop1','$drop2','$drop3','$date',$phone)";
+$res=mysqli_query($con,$sql);
+if($res){
+echo "$phone";
+}
+}
+if(isset($_GET["edit"]))
+ {
+     $_SESSION['edit']=$_GET['edit'];
+     $edit=$_SESSION['edit'];
+ }
+if(isset($_POST['update'])){
+    $drop1=$_POST['drop1'];
+    $drop2=$_POST['drop2'];
+    $drop3=$_POST['drop3'];
+    $date=$_POST['date'];
+    $phone=$_POST['phone'];
+$edit=$_SESSION['edit'];
+// mysqli_query($con,"DELETE * FROM  webs where id='$delid'");
+$sql="UPDATE babycare  set drop1='$drop1',drop2='$drop2',drop3='$drop3',drop4='$drop4',date='$date',phone='$phone' where id='$edit'";
 $res=mysqli_query($con,$sql);
 if($res){
    
-}
+  
 
+}
 }
 ?>
 

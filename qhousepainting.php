@@ -1,15 +1,17 @@
 <?php
 include("include.php");
+$nameid=$_GET['nameid'];
 ?>
 <?php
+SESSION_START();
 if(isset($_POST["insert"]))
 {
+    $drop5=$_POST['drop5'];
     $drop1=$_POST['drop1'];
     $drop2=$_POST['drop2'];
     $drop3=$_POST['drop3'];
     $drop4=$_POST['drop4'];
-    $drop5=$_POST['drop5'];
-    $drop6=$_POST['drop6'];
+     $drop6=$_POST['drop6'];
     $drop7=$_POST['drop7'];
     $date=$_POST['date'];
     $phone=$_POST['phone'];
@@ -17,12 +19,35 @@ if(isset($_POST["insert"]))
 //store a image in database3
 
 
-$sql="INSERT INTO housepainting (drop1,drop2,drop3,drop4,drop5,drop6,drop7,date,phone) VALUES ('$drop1','$drop2','$drop3','$drop4','$drop5','$drop6','$drop7','$date',$phone)";
+$sql="INSERT INTO housepainting (name,drop1,drop2,drop3,drop4,drop6,drop7,date,phone) VALUES ('$drop5','$drop1','$drop2','$drop3','$drop4','$drop6','$drop7','$date',$phone)";
+$res=mysqli_query($con,$sql);
+if($res){
+
+}
+}
+if(isset($_GET["edit"]))
+ {
+     $_SESSION['edit']=$_GET['edit'];
+     $edit=$_SESSION['edit'];
+ }
+if(isset($_POST['update'])){
+    $drop1=$_POST['drop1'];
+    $drop2=$_POST['drop2'];
+    $drop3=$_POST['drop3'];
+    $drop4=$_POST['drop4'];
+    $drop6=$_POST['drop6'];
+    $drop7=$_POST['drop7'];
+    $date=$_POST['date'];
+    $phone=$_POST['phone'];
+$edit=$_SESSION['edit'];
+// mysqli_query($con,"DELETE * FROM  webs where id='$delid'");
+$sql="UPDATE housepainting set drop1='$drop1',drop2='$drop2',drop3='$drop3',drop4='$drop4',drop6='$drop6',date='$date',phone='$phone' where id='$edit'";
 $res=mysqli_query($con,$sql);
 if($res){
    
-}
+  
 
+}
 }
 ?>
 
@@ -64,9 +89,15 @@ if($res){
 </head>
 
 <body>
-    <center>
-        <h1>Best Painters in Bangalore</h1>
-    </center>
+<?php 
+                $sql="SELECT * FROM 5image WHERE id='".$nameid."'";
+                $res=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_assoc($res)){
+                ?>
+               <center> <?php  echo '<h2>'.$row['name'].'</h2>'; ?></a> </center>                    
+                        <br>  
+                <?php } ?>
+   
     <br>
     <br>
     <br>
@@ -74,8 +105,28 @@ if($res){
     <div class="container">
         <div class="boxed">
 
-            <form action="housepainting.php" method="POST" enctype="multipart/form-data">
+            <form action="qhousepainting.php?nameid=<?php echo $nameid ?>" method="POST" enctype="multipart/form-data" onsubmit="return myfun()">
                 <div class="row">
+                <div class="col-sm-7">
+                        <div class="form-group">
+                            <label for="team" style="color:black;">
+                                <h3>Company Name</h3>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <br>
+                        <select name="drop5" id="drop5">
+                            <option value="Home"><?php 
+                $sql="SELECT * FROM 4image WHERE id='".$nameid."'";
+                $res=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_assoc($res)){
+                ?>
+               <center> <?php  echo '<h2>'.$row['name'].'</h2>'; ?></a> </center>                    
+                        <br>  
+                <?php } ?></option>
+                        </select>
+                    </div>
                     <div class="col-sm-7">
                         <div class="form-group">
                             <label for="team" style="color:black;">
@@ -130,23 +181,7 @@ if($res){
                 </div>
 
                 <hr>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="form-group">
-                            <label for="team" style="color:black;">
-                                <h3>What is the size of your house?</h3>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-4" ><br>
-                        <select name="drop4" id="drop4"  style="width:170px" >
-                            <option value="1BHK">1BHK</option>
-                            <option value="2BHK">2BHK</option>
-                            <option value="3BHK">3BHK</option>
-                            <option value="Premium 4BHK + or Bungalow/Villa">Premium 4BHK + or Bungalow/Villa</option>
-                        </select>
-                    </div>
-                </div>
+                
                     <hr>
                 <div class="row">
                     <div class="col-sm-7">
@@ -156,7 +191,7 @@ if($res){
                     </div>
                     
                     <div class="col-sm-3"><br>
-                    <select name="drop5" id="drop5"  style="width:170px" >
+                    <select name="drop4" id="drop4"  style="width:170px" >
                             <option value="New property or never painted">New property or never painted</option>
                             <option value="Painted few years ago">Painted few years ago</option>
                         </select>
@@ -227,12 +262,40 @@ if($res){
                     </div>
                 
                 </div>
-            
-                <button type="submit" name="insert" id="insert" class="btn btn-default" style="width: 160px; height: 48px; float:right;   background-color: #212121;    color: #fff;">Submit</button>
+                <div class="form-group">
+                <center>
+                        <a href="aupdate4.php?phone=<?php echo $_POST['phone']?>"><b><i style="color:black;font-size:120%">Delete  and edit Category</i></b></a></center>
+                    </div>
+   <button type="submit" name="insert" class="btn btn-default" style="width: 160px; height: 48px; float:right;   background-color: #212121;    color: #fff;">Submit</button></a>
+                <button type='Update' class='btn btn-default' name='update' style="width: 160px; height: 48px; float:right;   background-color: #212121;    color: #fff;">Update</button>
                 </form>
+             
+                <a href="index.php"><button type="submit" class="btn btn-default" style="width: 160px; height: 48px; float:left;   background-color: #212121;    color: #fff;">Back</button></a>
+        </div> </form>
         </div>
     </div>
-
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+function myfun(){
+    var a = document.getElementById("phone").value;
+    if(a==""){
+        document.getElementById("message").innerHTML="**pls fill mobile number";
+        return false;
+    }
+    if(isNaN(a)){
+        document.getElementById("message").innerHTML="**enter only numeric values";
+        return false;
+    }
+    if(a.length<10) {
+        document.getElementById("message").innerHTML="**mobile number must be 10 digit";
+        return false;
+    }
+    if(a.length>10){
+        document.getElementById("message").innerHTML="**mobile number must be 10 digit";
+        return false;
+    }
+    }
+</script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>

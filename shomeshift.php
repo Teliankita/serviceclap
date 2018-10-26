@@ -118,10 +118,10 @@
                         <br>
                         <br>
                         <h2>Hello, world! </h2>
-                        <h3>The need for uncertainty, diversity, challenge, change, surprise, adventure .</h3>
+                        <!-- <h3>The need for uncertainty, diversity, challenge, change, surprise, adventure .</h3>
                         <p>
                             <a href="#" class="btn btn-primary btn-large">Learn more »</a>
-                        </p>
+                        </p> -->
                     </div>
                 </div>
             </div>
@@ -435,24 +435,21 @@
                         <h3 class="footer-widget-title">Sitemap</h3>
                         <ul class="list-unstyled three_cols">
                             <h4>
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio_topvar.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="page_pricing.html">Signup</a>
-                                </li>
-                                <li>
-                                    <a href="page_about2.html">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="page_team.html">Service</a>
-                                </li>
-                                <li>
-                                    <a href="page_support.html">FAQ</a>
-                                </li>
+                            <li class="active">
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="blog.php">Blog</a>
+                        </li>
+                        <li>
+                            <a href="contact.php">Contact</a>
+                        </li>
+                        <li>
+                            <a href="login.php">Login</a>
+                        </li>
+                        <li>
+                            <a href="signup.php">Signup</a>
+                        </li>
                             </h4>
                         </ul>
 

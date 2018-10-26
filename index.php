@@ -53,12 +53,7 @@ include("include2.php");
     }
 
     /* end Carousel items*/
-    /* card */
-    body {
-  background:url("img/12.jpg") ;
-  color: #111;
-}
-
+    
 
 
 </style>
@@ -145,9 +140,9 @@ include("include2.php");
                         <br>
                         <br>
                         <h2>Hello, world! </h2>
-                        <h3>The need for uncertainty, diversity, challenge, change, surprise, adventure .</h3>
+                        <!-- <h3>The need for uncertainty, diversity, challenge, change, surprise, adventure .</h3>
                         <p>
-                            <a href="#" class="btn btn-primary btn-large">Learn more »</a>
+                            <a href="#" class="btn btn-primary btn-large">Learn more »</a> -->
                         </p>
                     </div>
                 </div>
@@ -242,7 +237,7 @@ include("include2.php");
             <hr>
 
             <!-- services image1 -->
-            <section class="bgimg" style="background-image: url('img/wp1.jpg')">
+            <!-- <section class="bgimg" style="background-image: url('img/wp1.jpg')"> -->
                 <div class="container-fluid bg-3 text-center" style="margin-left:60px;margin-right:60px;">
                     <div class="row">
                         <h2>Wedding Services</h2>
@@ -311,7 +306,7 @@ include("include2.php");
             <!--.end-->
 
             <!-- services image2 -->
-            <section class="bgimg" style="background-image: url('img/n2.jpg')">
+            <!-- <section class="bgimg" style="background-image: url('img/n2.jpg')"> -->
                 <div class="container-fluid bg-3 text-center" style="margin-left:60px;margin-right:60px;">
                     <div class="row">
                         <h2>Services</h2>
@@ -574,24 +569,21 @@ include("include2.php");
                         <h3 class="footer-widget-title">Sitemap</h3>
                         <ul class="list-unstyled three_cols">
                             <h4>
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="portfolio_topvar.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="page_pricing.html">Signup</a>
-                                </li>
-                                <li>
-                                    <a href="page_about2.html">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="page_team.html">Service</a>
-                                </li>
-                                <li>
-                                    <a href="page_support.html">FAQ</a>
-                                </li>
+                            <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="blog.php">Blog</a>
+                        </li>
+                        <li>
+                            <a href="contact.php">Contact</a>
+                        </li>
+                        <li>
+                            <a href="login.php">Login</a>
+                        </li>
+                        <li>
+                            <a href="signup.php">Signup</a>
+                        </li>
                             </h4>
                         </ul>
 
@@ -658,7 +650,7 @@ include("include2.php");
 
 
 
-                        <div class="row">
+                        <div class="row" style=" color:#fff;">
                             <div class="col-sm-12">
                                 <center>
                                     <a href="https://www.facebook.com" target="_blank">

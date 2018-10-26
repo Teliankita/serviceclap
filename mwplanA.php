@@ -1,5 +1,6 @@
 <?php
 include("include.php");
+$nameid=$_GET['nameid'];
 ?>
 <?php
 SESSION_START();
@@ -13,7 +14,7 @@ $phone=$_POST['phone'];
 
 //store a image in database3
 
-$sql="INSERT INTO mwplan (drop5,drop1,drop2,date,phone) VALUES ('$drop5','$drop1','$drop2','$date',$phone)";
+$sql="INSERT INTO mwplan (name,drop1,drop2,date,phone) VALUES ('$drop5','$drop1','$drop2','$date',$phone)";
 $res=mysqli_query($con,$sql);
 if($res){
 
@@ -83,9 +84,17 @@ if($res){
 </head>
 
 <body class="bg12">
-    <center>
-        <h1>ABC Wedding Planners</h1>
-    </center>
+
+ <!-- <div class=" row"> -->
+                    <?php 
+                $sql="SELECT * FROM image WHERE id='".$nameid."'";
+                $res=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_assoc($res)){
+                ?>
+               <center> <?php  echo '<h2>'.$row['name'].'</h2>'; ?></a> </center>                    
+                        <br>  
+                <?php } ?>
+                <!-- <div> -->
     <br>
     <br>
     <br>
@@ -93,7 +102,7 @@ if($res){
     <div class="container">
         <div class="boxed">
 
-            <form action="mwplanA.php" method="POST" enctype="multipart/form-data" onsubmit="return myfun()">
+            <form action="mwplanA.php?nameid=<?php echo $nameid ?>" method="POST" enctype="multipart/form-data" onsubmit="return myfun()">
             <div class="row">
                     <div class="col-sm-7">
                         <div class="form-group">
@@ -105,7 +114,15 @@ if($res){
                     <div class="col-sm-3">
                         <br>
                         <select name="drop5" id="drop5">
-                        <option>A </option>
+                        <option>  <?php 
+                $sql="SELECT * FROM image WHERE id='".$nameid."'";
+                $res=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_assoc($res)){
+                ?>
+               <center> <?php  echo '<h2>'.$row['name'].'</h2>'; ?></a> </center>                    
+                        <br>  
+                <?php } ?>
+                        </option>
                         </select>
                     </div>
                 </div>   
@@ -184,11 +201,11 @@ while ($row = mysqli_fetch_array($query))
 </div>
                 
                 </div>
-                <div class="form-group">
-                        <a href="aupdate.php?phone=<?php echo $_POST['phone'];?>"><b><i style="color:black;font-size:120%">Delete  and edit Category</i></b></a>
+                <div class="form-group"><center>
+                        <a href="aupdate.php?phone=<?php echo $_POST['phone']?>"><b><i style="color:black;font-size:120%">Delete  and edit Category</i></b></a></center>
                     </div>
    <button type="submit" name="insert" class="btn btn-default" style="width: 160px; height: 48px; float:right;   background-color: #212121;    color: #fff;">Submit</button></a>
-                <button type='Update' class='btn btn-default' name='update'>Update</button>
+                <button type='Update' class='btn btn-default' name='update' style="width: 160px; height: 48px; float:right;   background-color: #212121;    color: #fff;">Update</button>
                 </form>
              
                 <a href="index.php"><button type="submit" class="btn btn-default" style="width: 160px; height: 48px; float:left;   background-color: #212121;    color: #fff;">Back</button></a>

@@ -49,22 +49,19 @@ window.onpopstate=function(){
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li> <a href="wengagedboard.php"><b>Engagement</b></a> </li>
-                                <li><a href="wplandboard.php"><b>Wedding  Plan</b></a></li>
+                                <li><a href="wboardb.php"><b>Wedding  Plan</b></a></li>
+                                <li><a href="wphotodboard.php"><b>Wedding Photography</b></a></li>
                                 <li><a href="wmehendidboard.php"><b>Mehendi</b></a></li>
                                 <li><a href="wdjdashboard.php"><b>DJ</b></a></li>
-                                <li><a href="wcatedboard.php"><b>Caterer</b></a></li>
-                                <li><a href="wphotodboard.php"><b>Wedding Photography</b></a></li>
-                                <li><a href="wpredboard.php"><b>Pre-wedding Photography</b></a></li>
-                                <li><a href="wpostdboard.php"><b>Post-wedding Photography</b></a></li>
                             </ul>
                             </li>
-                                <li><a href="baby.php"><b>Baby</b></a></li>
-                                <li><a href="hometution.php"><b>Home Tutors</b></a></li>
-                                <li><a href="medical.php"><b>Medical</b></a></li>
-                                <li><a href="homeshift.php"><b>Home Shift</b></a></li>
-                                <li><a href="citygiud.php"><b>City Guide</b></a></li>
-                                <li><a href="carservice.php"><b>Car Service</b></a></li>
+                                <li><a href="bdboardb.php"><b>Baby</b></a></li>
+                                <li><a href="htboardb.php"><b>Home Tutors</b></a></li>
+                                <li><a href="mboardb.php"><b>Medical</b></a></li>
+                                <li><a href="hsboardb.php"><b>Home Shift</b></a></li>
+                                <li><a href="pboardb.php"><b>House painting</b></a></li>
+                                <li><a href="cboardb.php"><b>City Guide</b></a></li>
+                                <li><a href="cboardb.php"><b>Car Service</b></a></li>
                                 
                                 <li><a href="regisdboard.php"><b>register</b></a></li>
                                 

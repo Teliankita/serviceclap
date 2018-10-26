@@ -92,10 +92,13 @@
         
 
         <div class="row">
+        <br>
             <br>
             <br>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
+            <br>
+            <br>
                 <a href="1cityguidlocation.php">
                     <img class="" src="img/cg1.jpg" width="100%" height="400px">
                 </a>

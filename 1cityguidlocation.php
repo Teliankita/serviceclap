@@ -59,7 +59,7 @@ if(isset($_POST['login'])){
         <div class="boxed">
 <br>
 <br>
-            <form action="acityguidlocation.php" method="POST" enctype="multipart/form-data">
+            <form action="1cityguidlocation.php" method="POST" enctype="multipart/form-data">
                 <div class="row">
                 <div class="col-sm-2"></div>
                     <div class="col-sm-5">

@@ -94,8 +94,10 @@
         <div class="row">
             <br>
             <br>
+            <br>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
+            <br>
                 <a href="1babylocation.php">
                     <img class="" src="img/16.jpg" width="100%" height="400px">
                 </a>

@@ -96,6 +96,8 @@
             <br>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
+            <br>
+            <br>
                 <a href="1wplanlocation.php">
                     <img class="" src="img/w18.jpg" width="100%" height="400px">
                 </a>

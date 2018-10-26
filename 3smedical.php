@@ -97,6 +97,8 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
                 <a href="1medicallocation.php">
+                <br>
+            <br>
                     <img class="" src="img/m12.jpg" width="100%" height="400px">
                 </a>
             </div>
